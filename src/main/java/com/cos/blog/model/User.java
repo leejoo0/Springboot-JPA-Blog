@@ -1,13 +1,23 @@
 package com.cos.blog.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
 //ORM -> java(다른언어) Object -> 테이블로 매핑 해주는 기술
-@Entity  //Userclass가 Mysql에 테이블이 생성이 된다.
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity
+//Userclass가 Mysql에 테이블이 생성이 된다.
 public class User {
 
     @Id //primary key
