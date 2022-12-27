@@ -3,10 +3,10 @@ package com.cos.blog.test;
 import org.springframework.web.bind.annotation.*;
 
 //사용자가 요청 -> 응답(HTML 파일)
-//@Controller
+//@Controller  //파일을 리턴
 
 // 사용자가 요청 ->응답(Data)
-@RestController
+@RestController //데이터 그자체를 리턴
 public class HttpControllerTest {
 
     private static final String TAG = "HttpControllerTest";
@@ -35,20 +35,20 @@ public class HttpControllerTest {
         return "get 요청: id=" + m.getId()+ ", username = "+ m.getUsername() +"," +m.getPassword()+",email = "+m.getEmail();
     }
 
-    //http://localhost:8080/http/post (insert)
+    //http://localhost:8000/blog/http/post (insert)
     @PostMapping("/http/post") //text/plan , application/json
     public  String postTest(@RequestBody Member m){ // MessageConverter(스프링부트)
 
         return "post요청 id=" + m.getId()+ ", username = "+ m.getUsername() +"," +m.getPassword()+",email = "+m.getEmail();
     }
 
-    //http://localhost:8080/http/put (update)
+    //http://localhost:8000/blog/http/put (update)
     @PutMapping("/http/put")
     public  String putTest(@RequestBody Member m ){
         return "put요청 id=" + m.getId()+ ", username = "+ m.getUsername() +"," +m.getPassword()+",email = "+m.getEmail();
     }
 
-    //http://localhost:8080/http/delete (delete)
+    //http://localhost:8000/blog/http/delete (delete)
     @DeleteMapping("/http/delete")
     public  String deleteTest(){
         return "delete 요청";
