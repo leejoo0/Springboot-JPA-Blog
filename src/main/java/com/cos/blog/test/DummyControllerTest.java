@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 @RestController
 public class DummyControllerTest {
 
-    @Autowired  //의존성 주입
+    @Autowired  //의존성 주입(DI)
     private UserRepository userRepository;
 
     @DeleteMapping("/dummy/user/{id}")
